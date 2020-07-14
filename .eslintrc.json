@@ -1,0 +1,77 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "react-hooks",
+        "@typescript-eslint",
+        "prettier",
+        "eslint-plugin-import-helpers"
+    ],
+    "rules": {
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
+      "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true
+          }
+      ],
+        "prettier/prettier": "error",
+				"import/prefer-default-export": "off",
+				"react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+				"camelcase": "off",
+				"react/jsx-one-expression-per-line": "off",
+				"no-param-reassign": "off",
+				"no-unused-vars":["error", { "argsIgnorePattern":"^_" }],
+				"react-hooks/rules-of-hooks": "error",
+				"react-hooks/exhaustive-deps": "warn",
+				"global-require": "off",
+				"react-native/no-raw-text": "off",
+				"no-underscore-dangle": "off",
+				"no-console": ["error", { "allow": ["tron"] }],
+    		"class-methods-use-this": "off",
+				"import-helpers/order-imports": [
+          	"warn",
+					  {
+              "newlinesBetween": "always", // new line between groups
+             	"groups": [
+              	"/^react/",
+						    "module",
+						    "/^@shared/",
+						    ["parent", "sibling", "index"]
+					    ],
+					    "alphabetize": { "order": "asc", "ignoreCase": true }
+					  }
+				]
+    },
+    "settings": {
+      "import/resolver":{
+        "typescript": {}
+      }
+    }
+}
